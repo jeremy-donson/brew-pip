@@ -1,0 +1,8 @@
+---
+- hosts: all
+  sudo: yes
+  tasks:
+  - name: Ensure NTP installed.
+    yum: name=ntp state=present
+  - name: Ensure NTP running.
+    service: name=ntpd state=started enabled=yes
